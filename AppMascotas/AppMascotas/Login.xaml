@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMascotas.Login">
+
+    <ContentPage.Content>
+
+        <Grid>
+
+            <Image Source="imap.jpg" Aspect="AspectFill"/>
+            <BoxView Color="#D0A9F5" Opacity="0.8"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="logoh.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+
+                <StackLayout Grid.Row="1" Padding="30,70">
+                    <Entry Placeholder="Correo Electronico" PlaceholderColor="White" x:Name="txtUsuario"/>
+                    <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtPassword"/>
+                    <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" Clicked="Button_Clicked"/>
+                    <Button Text="Iniciar con Facebook" BackgroundColor="#5882FA" TextColor="White" CornerRadius="10"/>
+                    <Label  Text="" x:Name="lblResultado" TextColor="Red"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Recuperar Contraseña"/>
+                        <Label Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
