@@ -16,5 +16,21 @@ namespace AppMascotas
         {
             InitializeComponent();
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("Exit", "Quieres cerrar sesion", "Yes", "No");
+            if (answer)
+            {
+               
+                await Navigation.PushAsync(new Login());
+            }
+            else
+            {
+                App.Current.MainPage = new Login();
+            }
+
+
+        }
     }
 }

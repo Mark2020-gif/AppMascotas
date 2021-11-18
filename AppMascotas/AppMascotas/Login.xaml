@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppMascotas.Login">
+             x:Class="AppMascotas.Login"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
 
@@ -22,8 +23,8 @@
                 <StackLayout Grid.Row="1" Padding="30,70">
                     <Entry Placeholder="Correo Electronico" PlaceholderColor="White" x:Name="txtUsuario"/>
                     <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtPassword"/>
-                    <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" Clicked="Button_Clicked"/>
-                    <Button Text="Iniciar con Facebook" BackgroundColor="#5882FA" TextColor="White" CornerRadius="10"/>
+                    <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked"/>
+                    <Button Text="Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10"/>
                     <Label  Text="" x:Name="lblResultado" TextColor="Red"/>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Recuperar Contraseña"/>

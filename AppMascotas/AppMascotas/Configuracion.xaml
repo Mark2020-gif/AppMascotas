@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMascotas.Configuracion"
-             Title="Configuracion"
-             IconImageSource="ajuste.png">
+             Title="Ajustes"
+             IconImageSource="mj.png">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Area de configuraciones"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Cerrar sesion" BackgroundColor="#A901DB" TextColor="White" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
