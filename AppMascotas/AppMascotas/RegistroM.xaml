@@ -5,10 +5,27 @@
              Title="Carnet"
              IconImageSource="id.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Generacion de Carnet"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="logoh.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+
+            <StackLayout Grid.Row="1" Padding="30,70">
+                <Entry Placeholder="Correo Electronico" PlaceholderColor="White" x:Name="txtUsuario"/>
+                <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtContrasenia"/>
+                <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold"/>
+                <Button Text="Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10"/>
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Recuperar Contraseña"/>
+                    <Button Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold" CornerRadius="10" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

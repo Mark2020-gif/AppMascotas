@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppMascotas.Models;
 using Newtonsoft.Json;
+using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,46 +17,45 @@ namespace AppMascotas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
+        private SQLiteAsyncConnection con;
         public Login()
         {
             InitializeComponent();
+            con = DependencyService.Get<DataBase>().GetConnection();
         }
 
-        public string RequestUri { get; private set; }
-
-        private async void Button_Clicked(object sender, EventArgs e)
+        public static IEnumerable<Usuarios> SELECT_WHERE(SQLiteConnection db, string usuario, string contrasenia)
         {
-             String sUsario = txtUsuario.Text;
-            String sPassword = txtPassword.Text;
+            return db.Query<Usuarios>("SELECT * FROM Usuarios where Usuario = ? and Contrasenia =?", usuario, contrasenia);
+        }
 
-            if((sUsario == "Admin") && (sPassword == "1234"))
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            try
             {
-                Navigation.PushAsync(new Registro());
-           
+                var documentPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "db_mascotas.db3");
+                var db = new SQLiteConnection(documentPath);
+                db.CreateTable<Usuarios>();
+                IEnumerable<Usuarios> resultado = SELECT_WHERE(db, txtUsuario.Text, txtContrasenia.Text);
+                if (resultado.Count() > 0)
+                {
+                    Navigation.PushAsync(new Registro());
+                }
+                else
+                {
+                    DisplayAlert("Alerta", "Usuario no existe", "OK");
+                }
             }
-
-            /*sesion log = new sesion
+            catch (Exception ex)
             {
-               usuario = txtUsuario.Text,
-                pass = txtPassword.Text
+                DisplayAlert("Alerta", "Usuario no existe", "OK");
+            }
+        }
 
-            };
-            //Uri RequestUri = new Uri("http://127.0.0.1/moviles/login.php");
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NuevoRegistro());
 
-             
-           // var request = new HttpRequestMessage();
-           // request.RequestUri = new Uri("http://127.0.0.1/moviles/login.php");
-            //var json = JsonConvert.SerializeObject(log);
-           // request.Method = HttpMethod.Get;
-            // var contentJaon = new StringContent(json, Encoding.UTF8, "application/json");
-           // request.Headers.Add("Accept", "application/json");
-           // var client = new HttpClient();
-           // HttpResponseMessage response = await client.SendAsync(request);
-            //var response = await client.PostAsync(RequestUri, contentJaon);
-           // if (response.StatusCode == System.Net.HttpStatusCode.OK)
-           // {
-            //    await Navigation.PushAsync(new Registro());
-            //}*/
         }
     }
 }

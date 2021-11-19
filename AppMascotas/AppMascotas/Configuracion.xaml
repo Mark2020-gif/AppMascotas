@@ -5,11 +5,21 @@
              Title="Ajustes"
              IconImageSource="mj.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Area de configuraciones"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Cerrar sesion" BackgroundColor="#A901DB" TextColor="White" Clicked="Button_Clicked"/>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1" Padding="30,70">
+
+
+                <Label Text="Acerca De"  FontAttributes="Bold"/>
+                <Button Text="Cerrar Sesion" BackgroundColor="#A901DB" Image="" TextColor="White" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked"/>
+        
+            </StackLayout>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

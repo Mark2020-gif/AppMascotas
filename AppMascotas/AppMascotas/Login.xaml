@@ -22,13 +22,14 @@
 
                 <StackLayout Grid.Row="1" Padding="30,70">
                     <Entry Placeholder="Correo Electronico" PlaceholderColor="White" x:Name="txtUsuario"/>
-                    <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtPassword"/>
+                    <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtContrasenia"/>
                     <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked"/>
                     <Button Text="Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10"/>
-                    <Label  Text="" x:Name="lblResultado" TextColor="Red"/>
+                    
+                    
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Recuperar Contraseña"/>
-                        <Label Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                        <Button Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked_1" />
                     </StackLayout>
                 </StackLayout>
             </Grid>

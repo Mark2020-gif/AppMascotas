@@ -5,10 +5,39 @@
              Title="Registro"
              IconImageSource="registro.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Registro de mascotas"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="1" Padding="30,30">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Numero de ID"  FontAttributes="Bold"/>
+                    <Entry Placeholder="ID Mascota" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre de la mascota "  FontAttributes="Bold"/>
+                    <Entry Placeholder="Mascota"  />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Raza de la mascota" FontAttributes="Bold"/>
+                    <Entry Placeholder="Raza"  HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                
+                <Button Text="Registrar" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold"/>
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
