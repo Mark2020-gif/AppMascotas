@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Plugin.CurrentActivity;
 
 namespace AppMascotas.Droid
 {
@@ -12,7 +13,11 @@ namespace AppMascotas.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+
             base.OnCreate(savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -23,6 +28,7 @@ namespace AppMascotas.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
