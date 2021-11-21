@@ -12,11 +12,6 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
             <StackLayout Grid.Row="1" Padding="30,30">
 
                 <StackLayout Orientation="Horizontal">

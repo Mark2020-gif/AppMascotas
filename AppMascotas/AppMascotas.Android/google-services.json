@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "816557267298",
+    "project_id": "xamarinauth-6d034",
+    "storage_bucket": "xamarinauth-6d034.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816557267298:android:d813a0a6c3c8584345f43b",
+        "android_client_info": {
+          "package_name": "com.companyname.appmascotas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816557267298-e2boe5leijr168aabb1ok496emif82an.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.appmascotas",
+            "certificate_hash": "e18f4f033b70bff469a0b10e193182a0cb6fa17f"
+          }
+        },
+        {
+          "client_id": "816557267298-8mne4upsg2l0uaogrc4iruj4a2cknamv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp91g2pDTCv7S1dSErq-65luxuMzDT3YU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816557267298-8mne4upsg2l0uaogrc4iruj4a2cknamv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
