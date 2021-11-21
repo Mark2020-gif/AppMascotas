@@ -12,30 +12,44 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
+            
             <StackLayout Grid.Row="1" Padding="30,30">
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Numero de ID"  FontAttributes="Bold"/>
-                    <Entry Placeholder="ID Mascota" HorizontalOptions="EndAndExpand" />
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Nombre de la mascota "  FontAttributes="Bold"/>
-                    <Entry Placeholder="Mascota"  />
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Raza de la mascota" FontAttributes="Bold"/>
-                    <Entry Placeholder="Raza"  HorizontalOptions="EndAndExpand" />
+                    <Label x:Name="txtIdMascota"  Text="Numero de ID"   FontSize="14" FontAttributes="Bold"/>
+                    <Entry Placeholder="ID Mascota" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
                 </StackLayout>
 
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="txtNombreM" Text="Nombre de la mascota " FontSize="14"  FontAttributes="Bold"/>
+                    <Entry Placeholder="Nombre"  FontSize="14" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                </StackLayout>
                 
-                <Button Text="Registrar" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="txtRaza"  Text="Raza:" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry Placeholder="Raza" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+
+                    <Label x:Name="txtSexo"  Text="Sexo:" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry Placeholder="Sexo" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="txtNombreD" Text="Nombre Propietario" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry Placeholder="NombreD"  FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="txtDireccion" Text="Direccion" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry Placeholder="Direccion" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button x:Name="btnTomarFoto" Text="Tomar Foto" BackgroundColor="MediumAquamarine" TextColor="White"/>
+                    <Button x:Name="btnSeleccionarFoto" Text="Selecionar Foto" BackgroundColor="Aquamarine" TextColor="White"/>
+                    <Image x:Name="Imagen"/>
+                    <Button x:Name="btnRegistrar" Text="Registrar" Clicked="btnRegistrar_Clicked"  BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold"/>
+                </StackLayout>
+                
+              
 
             </StackLayout>
         </Grid>
