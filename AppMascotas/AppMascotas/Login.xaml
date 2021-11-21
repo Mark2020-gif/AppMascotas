@@ -24,7 +24,7 @@
                     <Entry Placeholder="Correo Electronico" PlaceholderColor="White" x:Name="txtUsuario"/>
                     <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtContrasenia"/>
                     <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked"/>
-                    <Button Text="Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10"/>
+                    <Button Text="Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked_2" />
                     
                     
                     <StackLayout Orientation="Horizontal">
