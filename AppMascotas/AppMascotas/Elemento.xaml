@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMascotas.Elemento">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="10">
+                <Label x:Name="mensaje"/>
+                <Label Text="ID"/>
+                <Entry x:Name="lbId" Placeholder="ID de mascota"/>
+                <Label Text="Nombre"/>
+                <Entry x:Name="lbNombre" Placeholder="Nombre de la mascota"/>
+                <Label Text="Raza "/>
+                <Entry x:Name="lbMascota" Placeholder="Raza de la mascota"/>
+                <Label Text="Sexo"/>
+                <Entry x:Name="lbSexo" Placeholder="Sexo de la mascota"/>
+                <Label Text="Duenio"/>
+                <Entry x:Name="lbDuenio" Placeholder="Propietario de la Mascota"/>
+                <Label Text="Direccion "/>
+                <Entry x:Name="lbDir" Placeholder="Direccion"/>
+                <Button x:Name="btn_actualizar" Text="Actualizar"  BackgroundColor="LawnGreen" Clicked="btn_actualizar_Clicked"/>
+                <Button x:Name="btn_eliminar" Text="Eliminar"  BackgroundColor="Red" Clicked="btn_eliminar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

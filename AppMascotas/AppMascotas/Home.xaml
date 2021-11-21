@@ -12,49 +12,40 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
             <StackLayout Grid.Row="1" Padding="30,30">
 
                 <StackLayout Orientation="Horizontal">
-                    <Label x:Name="txtIdMascota"  Text="Numero de ID"   FontSize="14" FontAttributes="Bold"/>
-                    <Entry Placeholder="ID Mascota" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+                    <Label Text="Numero de ID" FontSize="14" FontAttributes="Bold"/>
+                    <Entry x:Name="txtIdMascota" Placeholder="ID Mascota" HorizontalOptions="EndAndExpand"  />
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label x:Name="txtNombreM" Text="Nombre de la mascota " FontSize="14"  FontAttributes="Bold"/>
-                    <Entry Placeholder="Nombre"  FontSize="14" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                    <Label Text="Nombre de la mascota " FontSize="14"  FontAttributes="Bold"/>
+                    <Entry x:Name="txtNombreM" Placeholder="Nombre" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 
                 <StackLayout Orientation="Horizontal">
-                    <Label x:Name="txtRaza"  Text="Raza:" FontSize="14"  FontAttributes="Bold"/>
-                    <Entry Placeholder="Raza" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+                    <Label Text="Raza:" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry x:Name="txtRaza" Placeholder="Raza" HorizontalOptions="EndAndExpand"  />
 
-                    <Label x:Name="txtSexo"  Text="Sexo:" FontSize="14"  FontAttributes="Bold"/>
-                    <Entry Placeholder="Sexo" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                    <Label Text="Sexo:" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry x:Name="txtSexo" Placeholder="Sexo"  HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label x:Name="txtNombreD" Text="Nombre Propietario" FontSize="14"  FontAttributes="Bold"/>
-                    <Entry Placeholder="NombreD"  FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+                    <Label Text="Nombre Propietario" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry x:Name="txtNombreD" Placeholder="Nombre" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label x:Name="txtDireccion" Text="Direccion" FontSize="14"  FontAttributes="Bold"/>
-                    <Entry Placeholder="Direccion" FontSize="14"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" />
+                    <Label Text="Direccion" FontSize="14"  FontAttributes="Bold"/>
+                    <Entry x:Name="txtDireccion" Placeholder="Direccion" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Button x:Name="btnTomarFoto" Text="Tomar Foto" BackgroundColor="MediumAquamarine" TextColor="White"/>
-                    <Button x:Name="btnSeleccionarFoto" Text="Selecionar Foto" BackgroundColor="Aquamarine" TextColor="White"/>
+                    <Button x:Name="btnTomarFoto" Text="Tomar Foto" BackgroundColor="#FF8000" CornerRadius="10" TextColor="White"/>
+                    <Button x:Name="btnSeleccionarFoto" Text="Selecionar Foto" BackgroundColor="#FF8000" CornerRadius="10" TextColor="White"/>
                     <Image x:Name="Imagen"/>
-                    <Button x:Name="btnRegistrar" Text="Registrar" Clicked="btnRegistrar_Clicked"  BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold"/>
+                    <Button x:Name="btnRegistrar" Text="Registrar"   BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold" Clicked="btnRegistrar_Clicked"/>
                 </StackLayout>
                 
               

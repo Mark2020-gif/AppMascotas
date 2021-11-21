@@ -16,37 +16,27 @@ namespace AppMascotas
     public partial class RegistroM : ContentPage
     {
         private SQLiteAsyncConnection con;
-        private ObservableCollection<Animales> TablaAnimales;
-       
+        private ObservableCollection<Usuarios> tablaAnimales;
 
         public RegistroM()
         {
             InitializeComponent();
             con = DependencyService.Get<DataBase>().GetConnection();
             consulta();
+
         }
 
-        protected async  void consulta()
+        private async void consulta()
         {
-            var registros = await con.Table<Animales>().ToListAsync();
-            TablaAnimales = new ObservableCollection<Animales>(registros);
-            Carnet.ItemsSource = TablaAnimales;
+            var registro = await con.Table<Usuarios>().ToListAsync();
+            tablaAnimales = new ObservableCollection<Usuarios>(registro);
+            ListaMascotas.ItemsSource = tablaAnimales;
         }
 
-      
-        private void Carnet_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void ListaMascotas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var Obj = (Animales)e.SelectedItem;
-            var item = Obj.Id.ToString();
-            int ID = Convert.ToInt32(item);
-            try
-            {
-              //  Navigation.PushAsync(new Home(ID));
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+
+
         }
     }
 }

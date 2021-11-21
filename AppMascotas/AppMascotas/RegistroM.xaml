@@ -5,25 +5,17 @@
              Title="Carnet"
              IconImageSource="id.png">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <Image Grid.Row="0" Source="logoh.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
-
-            <StackLayout >
-                <ListView x:Name="Carnet" ItemSelected="Carnet_ItemSelected">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding Nombre}" Detail="{Binding Raza}"></TextCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-               
-            </StackLayout>
-        </Grid>
+        <StackLayout >
+            <Image Source="https://www.rionegro.com.ar/wp-content/uploads/2020/06/shutterstock_641203957.jpg"></Image>
+            <Label Text=" "/>
+            <Label Text="  MASCOTAS REGISTRADAS" FontAttributes="Bold" TextColor="#A901DB"/>
+            <ListView x:Name="ListaMascotas" ItemSelected="ListaMascotas_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding IdMascota}" Detail="{Binding NombreM}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

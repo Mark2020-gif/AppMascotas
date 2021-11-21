@@ -21,30 +21,28 @@ namespace AppMascotas
             InitializeComponent();
             con = DependencyService.Get<DataBase>().GetConnection();
         }
-        
 
         private void btnRegistrar_Clicked(object sender, EventArgs e)
         {
             try
             {
-                var DatosRegistro = new Animales{ IdMascota = txtIdMascota.Text, NombreM = txtNombreM.Text, Raza = txtRaza.Text, Sexo = txtSexo.Text , NombreD= txtNombreD.Text, Direccion= txtDireccion.Text };
-                con.InsertAsync(DatosRegistro);
+                var Registro = new Usuarios { IdMascota = txtIdMascota.Text, NombreM = txtNombreM.Text, Raza = txtRaza.Text, Sexo = txtSexo.Text, NombreD = txtNombreD.Text, Direccion = txtDireccion.Text };
+                con.InsertAsync(Registro);
+                DisplayAlert("Alerta", "Dato ingresado", "OK");
+
+                txtIdMascota.Text = "";
+                txtNombreM.Text = "";
+                txtRaza.Text = "";
+                txtSexo.Text = "";
+                txtNombreD.Text = "";
+                txtDireccion.Text = "";
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                DisplayAlert("Error", ex.Message, "ok");
+                DisplayAlert("Alerta", ex.Message, "Ok");
             }
-          
-            LimpiarFormulario();
-        }
-        void LimpiarFormulario() {
-            txtNombreM.Text = "";
-            txtRaza.Text = "";
-            txtSexo.Text = "";
-            txtNombreD.Text = "";
-            txtDireccion.Text = "";
-            DisplayAlert("Mensaje", "Se Registro correctamente", "Ok");
-        
+
         }
     }
 }

@@ -29,7 +29,7 @@
                     
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Recuperar Contraseña"/>
-                        <Button Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked_1" />
+                        <Button Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold" BackgroundColor="#FF8000" TextColor="White" CornerRadius="10" Clicked="Button_Clicked_1" />
                     </StackLayout>
                 </StackLayout>
             </Grid>

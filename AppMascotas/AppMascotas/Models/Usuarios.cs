@@ -20,14 +20,7 @@ namespace AppMascotas.Models
         [MaxLength(225)]
 
         public string Contrasenia { get; set; }
-    }
-
-    public class Animales
-    {
-        [PrimaryKey, AutoIncrement]
-
-        public int Id { get; set; }
-        [MaxLength(50)]
+        [MaxLength(20)]
 
         public string IdMascota { get; set; }
         [MaxLength(225)]

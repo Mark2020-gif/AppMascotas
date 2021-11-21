@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace AppMascotas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Configuracion : ContentPage
     {
+        private SQLiteAsyncConnection con;
         public Configuracion()
         {
             InitializeComponent();
+            
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
