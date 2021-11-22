@@ -26,6 +26,8 @@ namespace AppMascotas
 
         }
 
+        public string IdMascota { get; private set; }
+
         private async void consulta()
         {
             var registro = await con.Table<Usuarios>().ToListAsync();
@@ -35,8 +37,18 @@ namespace AppMascotas
 
         private void ListaMascotas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
-
+            var Obj = (Usuarios)e.SelectedItem;
+           // var item = Obj.IdMascota.ToString();
+            
+       
+            try
+            {
+                Navigation.PushAsync(new Elemento(IdMascota));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
