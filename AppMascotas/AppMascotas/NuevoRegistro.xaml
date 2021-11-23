@@ -4,15 +4,24 @@
              x:Class="AppMascotas.NuevoRegistro"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
+        <Grid>
+            <Image Source="mast.jpg" Aspect="AspectFill"/>
+            <BoxView Color="#D0A9F5" Opacity="0.4"/>
+            <Grid>
 
-            <Image Grid.Row="0" Source="logoh.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
-            <Entry x:Name="txtNombre" Placeholder="Nombre de Usuario"/>
-            <Entry x:Name="txtUsuario" Placeholder="Correo Electronico"/>
-            <Entry x:Name="txtContrasenia" Placeholder="Constaseña" IsPassword="True"/>
+                <StackLayout Grid.Row="0" Padding="30,70" >
 
-            <Button x:Name="btnAgregar" Text="Registrar" BackgroundColor="#A901DB" TextColor="White" FontAttributes="Bold" CornerRadius="10" Clicked="btnAgregar_Clicked"/>
-            <Button Text="Regresar" BackgroundColor="#FF8000" TextColor="White" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked"/>
-        </StackLayout>
+                    <Image Grid.Row="1" Source="logoh.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+                    <Entry x:Name="txtNombre" Placeholder="Nombre de usuario" />
+                    <Entry x:Name="txtUsuario" Placeholder="Correo Electronico"/>
+                    <Entry x:Name="txtContrasenia" Placeholder="Contraseña" IsPassword="True" />
+
+                    <StackLayout >
+                    <Button x:Name="btnAgregar" Text="Registrar" BackgroundColor="#A901DB" TextColor="White" FontAttributes="Bold" CornerRadius="10" Clicked="btnAgregar_Clicked"/>
+                    <Button Text="Cancelar" BackgroundColor="#FF8000" TextColor="White" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

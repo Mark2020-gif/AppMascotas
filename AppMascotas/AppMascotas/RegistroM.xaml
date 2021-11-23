@@ -9,7 +9,7 @@
             <Image Source="https://www.rionegro.com.ar/wp-content/uploads/2020/06/shutterstock_641203957.jpg"></Image>
             <Label Text=" "/>
             <Label Text="  MASCOTAS REGISTRADAS" FontAttributes="Bold" TextColor="#A901DB"/>
-            <ListView x:Name="ListaMascotas" ItemSelected="ListaMascotas_ItemSelected">
+            <ListView x:Name="ListaMascotas" ItemSelected="OnSelection">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding IdMascota}" Detail="{Binding NombreM}"></TextCell>

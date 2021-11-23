@@ -12,6 +12,8 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+            <Label x:Name="lblEmail" Text="" FontAttributes="Bold"/>
+            
             <StackLayout Grid.Row="0" Padding="30,70">
                 <Label Text="AppMascotas" FontAttributes="Bold"/>
                 <Label Text="Prototipo de App para generar DNI de mascotas y llevar un registro de las mascotas de un distrito. "/>

@@ -18,8 +18,11 @@
                 <Entry x:Name="lbDuenio" Placeholder="Propietario de la Mascota"/>
                 <Label Text="Direccion "/>
                 <Entry x:Name="lbDir" Placeholder="Direccion"/>
-                <Button x:Name="btn_actualizar" Text="Actualizar"  BackgroundColor="LawnGreen" Clicked="btn_actualizar_Clicked"/>
-                <Button x:Name="btn_eliminar" Text="Eliminar"  BackgroundColor="Red" Clicked="btn_eliminar_Clicked"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btn_actualizar" Text="Actualizar" CornerRadius="10" TextColor="White" BackgroundColor="#FF8000" Clicked="btn_actualizar_Clicked"/>
+                    <Button x:Name="btn_eliminar" Text="Eliminar" CornerRadius="10" TextColor="White" BackgroundColor="#FF8000" Clicked="btn_eliminar_Clicked"/>
+                   
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

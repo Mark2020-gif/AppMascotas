@@ -32,7 +32,7 @@ namespace AppMascotas.Droid
             _context = global::Android.App.Application.Context;
             Instance = this;
         }
-        public void Login(Action<GoogleUser, string> OnLoginComplete)
+        public void Login(Action<GoogleUser, string> onLoginComplete)
         {
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
                                                  .RequestEmail()
@@ -51,10 +51,10 @@ namespace AppMascotas.Droid
         }
 
 
-        private void onLoginComplete(GoogleUser arg1, string arg2)
+        /*private void onLoginComplete(GoogleUser arg1, string arg2)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         public void Logout()
         {

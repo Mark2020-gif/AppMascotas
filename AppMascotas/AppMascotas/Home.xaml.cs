@@ -28,7 +28,7 @@ namespace AppMascotas
         {
             try
             {
-                var Registro = new Usuarios { IdMascota = txtIdMascota.Text, NombreM = txtNombreM.Text, Raza = txtRaza.Text, Sexo = txtSexo.Text, NombreD = txtNombreD.Text, Direccion = txtDireccion.Text };
+                var Registro = new Animales { IdMascota = txtIdMascota.Text, NombreM = txtNombreM.Text, Raza = txtRaza.Text, Sexo = txtSexo.Text, NombreD = txtNombreD.Text, Direccion = txtDireccion.Text };
                 con.InsertAsync(Registro);
                 DisplayAlert("Alerta", "Dato ingresado", "OK");
 
@@ -62,10 +62,10 @@ namespace AppMascotas
             {
 
                 Directory = "Sample",
-                Name = "test.jpg",
+                //Name = "test.jpg",
                 SaveToAlbum = true,
-                CompressionQuality = 75,
-                CustomPhotoSize = 50,
+                CompressionQuality = 50,
+                CustomPhotoSize = 20,
                 PhotoSize = Plugin.Media.Abstractions.PhotoSize.MaxWidthHeight,
                 MaxWidthHeight = 2000,
                 DefaultCamera = Plugin.Media.Abstractions.CameraDevice.Front});

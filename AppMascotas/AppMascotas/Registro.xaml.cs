@@ -12,9 +12,21 @@ namespace AppMascotas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Registro : TabbedPage
     {
-        public Registro()
+        public string correo;
+
+        public Registro(string Email)
         {
             InitializeComponent();
+
+            //Correo(Email);
+            DisplayAlert("Usuario conectado", Email, "OK");
+            //Navigation.PushAsync(new Configuracion(Email));
         }
+
+        /*public string Correo(string Email)
+        {
+            correo = Email;
+            return correo;
+        }*/
     }
 }

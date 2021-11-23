@@ -13,10 +13,12 @@ namespace AppMascotas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Configuracion : ContentPage
     {
-        private SQLiteAsyncConnection con;
+        /*private SQLiteAsyncConnection con;*/
         public Configuracion()
         {
             InitializeComponent();
+
+            //lblEmail.Text = Registro.Correo();
             
         }
 

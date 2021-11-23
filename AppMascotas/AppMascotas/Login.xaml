@@ -8,8 +8,8 @@
 
         <Grid>
 
-            <Image Source="imap.jpg" Aspect="AspectFill"/>
-            <BoxView Color="#D0A9F5" Opacity="0.8"/>
+            <Image Source="Rts.jpg" Aspect="AspectFill"/>
+            <BoxView Color="#D0A9F5" Opacity="0.4"/>
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -21,10 +21,10 @@
                 <Image Grid.Row="0" Source="logoh.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
 
                 <StackLayout Grid.Row="1" Padding="30,70">
-                    <Entry Placeholder="Correo Electronico" PlaceholderColor="White" x:Name="txtUsuario"/>
-                    <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="txtContrasenia"/>
+                    <Entry Placeholder="Correo Electronico"  x:Name="txtUsuario"/>
+                    <Entry Placeholder="Contraseña"  IsPassword="True" x:Name="txtContrasenia"/>
                     <Button Text="Iniciar Sesion" BackgroundColor="#A901DB" CornerRadius="10" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked"/>
-                    <Button Text="Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked_2" />
+                    <Button Text="Start with Google" BackgroundColor="#E6E6E6" Image="" TextColor="Black" FontAttributes="Bold" CornerRadius="10" Clicked="Button_Clicked_2" />
                     
                     
                     <StackLayout Orientation="Horizontal">

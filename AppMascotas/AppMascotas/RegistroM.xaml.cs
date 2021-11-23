@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using SQLite;
 using AppMascotas.Models;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace AppMascotas
 {
@@ -16,7 +17,7 @@ namespace AppMascotas
     public partial class RegistroM : ContentPage
     {
         private SQLiteAsyncConnection con;
-        private ObservableCollection<Usuarios> tablaAnimales;
+        private ObservableCollection<Animales> tablaUsuarios;
 
         public RegistroM()
         {
@@ -26,29 +27,39 @@ namespace AppMascotas
 
         }
 
-        public string IdMascota { get; private set; }
-
         private async void consulta()
         {
-            var registro = await con.Table<Usuarios>().ToListAsync();
-            tablaAnimales = new ObservableCollection<Usuarios>(registro);
-            ListaMascotas.ItemsSource = tablaAnimales;
+            var registro = await con.Table<Animales>().ToListAsync();
+            tablaUsuarios = new ObservableCollection<Animales>(registro);
+            ListaMascotas.ItemsSource = tablaUsuarios;
         }
 
-        private void ListaMascotas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        protected async override void OnAppearing()
         {
-            var Obj = (Usuarios)e.SelectedItem;
-           // var item = Obj.IdMascota.ToString();
-            
-       
+            var DataBasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "db_mascotas.db3");
+            var db = new SQLiteConnection(DataBasePath);
+
+            db.CreateTable<Animales>();
+            var ResulRegistros = await con.Table<Animales>().ToListAsync();
+            tablaUsuarios = new ObservableCollection<Animales>(ResulRegistros);
+            ListaMascotas.ItemsSource = tablaUsuarios;
+            base.OnAppearing();
+        }
+
+        void OnSelection(object sender, SelectedItemChangedEventArgs e)
+        {
+            var Obj = (Animales)e.SelectedItem;
+            var item = Obj.Id.ToString();
+            int ID = Convert.ToInt32(item);
             try
             {
-                Navigation.PushAsync(new Elemento(IdMascota));
+                Navigation.PushAsync(new Elemento(ID, Obj.IdMascota.ToString(), Obj.NombreM.ToString(), Obj.Raza.ToString(), Obj.Sexo.ToString(), Obj.NombreD.ToString(), Obj.Direccion.ToString()));
             }
             catch (Exception)
             {
                 throw;
             }
         }
+
     }
 }

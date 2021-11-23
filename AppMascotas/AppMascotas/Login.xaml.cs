@@ -18,6 +18,8 @@ namespace AppMascotas
     public partial class Login : ContentPage
     {
         private SQLiteAsyncConnection con;
+        public SQLiteConnection db;
+
         private readonly IGoogleManager _googleManager;
         GoogleUser GoogleUser = new GoogleUser();
         public bool IsLogedIn { get; set; }
@@ -27,6 +29,12 @@ namespace AppMascotas
             con = DependencyService.Get<DataBase>().GetConnection();
             _googleManager = DependencyService.Get<IGoogleManager>();
             /* CheckUserLoggedIn();*/
+
+            var documentPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "db_mascotas.db3");
+            db = new SQLiteConnection(documentPath);
+            db.CreateTable<Usuarios>();
+            db.CreateTable<Animales>();
+
         }
        
         public static IEnumerable<Usuarios> SELECT_WHERE(SQLiteConnection db, string usuario, string contrasenia)
@@ -38,13 +46,13 @@ namespace AppMascotas
         {
             try
             {
-                var documentPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "db_mascotas.db3");
+                /*var documentPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "db_mascotas.db3");
                 var db = new SQLiteConnection(documentPath);
-                db.CreateTable<Usuarios>();
+                db.CreateTable<Usuarios>();*/
                 IEnumerable<Usuarios> resultado = SELECT_WHERE(db, txtUsuario.Text, txtContrasenia.Text);
                 if (resultado.Count() > 0)
                 {
-                    Navigation.PushAsync(new Registro());
+                    Navigation.PushAsync(new Registro(txtUsuario.Text));
                 }
                 else
                 {
@@ -53,7 +61,7 @@ namespace AppMascotas
             }
             catch (Exception ex)
             {
-                DisplayAlert("Alerta", "Usuario no existe", "OK");
+                DisplayAlert("Alerta", ex.Message, "OK");
             }
         }
 
@@ -63,18 +71,19 @@ namespace AppMascotas
 
         }
 
-        /* private void CheckUserLoggedIn()
- {
-     _googleManager.Login(OnLoginComplete);
- }*/
+        private void CheckUserLoggedIn()
+        {
+            _googleManager.Login(OnLoginComplete);
+        }
 
         private void OnLoginComplete(GoogleUser googleUser, string message)
         {
             if (googleUser != null)
             {
                 GoogleUser = googleUser;
-                txtUsuario.Text = GoogleUser.Email;
+                //txtUsuario.Text = GoogleUser.Email;
                 IsLogedIn = true;
+                Navigation.PushAsync(new Registro(GoogleUser.Email));
             }
             else
             {
